@@ -13,6 +13,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 27px;
+  overflow: hidden;
 }
 
 .app-header{
@@ -66,10 +67,20 @@
       border-radius: 7%;
     }
   }
+
+  @media screen and (max-width:480px) {
+    nav{
+      p{
+        top: 5px;
+        right: 4px;
+        font-size: 20px;
+      }
+    }
+  }
 }
 
 .app-secondLayer{
-  height: 4.7vh;
+  min-height: 4.7vh;
   width: 80%;
   margin-top: 36px;
   display: flex;
@@ -82,7 +93,7 @@
   }
 
   section{
-    height: 100%;
+    height: 4.7vh;
     display: flex;
     gap: 10px;
 
@@ -98,6 +109,11 @@
       outline: none;
       cursor: pointer;
     }
+  }
+
+  @media screen and (max-width:480px) {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -202,5 +218,13 @@
         }
       }
     }
+  }
+
+  @media screen and (max-width:768px) {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  @media screen and (max-width:480px) {
+    grid-template-columns: 1fr;
   }
 }
