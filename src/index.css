@@ -128,7 +128,7 @@
   margin-bottom: 30px;
 
   main{
-    height: 30vh;
+    height: 30dvh;
     width: 100%;
     background-color: hsl(226, 25%, 17%);
     border-radius: 15px;
@@ -228,8 +228,5 @@
 
   @media screen and (max-width:480px) {
     grid-template-columns: 1fr;
-    main{
-      max-height: 20dvh;
-    }
   }
 }
