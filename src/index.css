@@ -228,5 +228,9 @@
 
   @media screen and (max-width:480px) {
     grid-template-columns: 1fr;
+
+    main{
+      height: 25dvh;
+    }
   }
 }
