@@ -114,6 +114,7 @@
   @media screen and (max-width:480px) {
     flex-direction: column;
     gap: 10px;
+    
   }
 }
 
@@ -124,6 +125,7 @@
   margin-top: 19px;
   grid-template-columns: repeat(3,1fr);
   gap: 10px;
+  margin-bottom: 30px;
 
   main{
     height: 30vh;
@@ -226,5 +228,8 @@
 
   @media screen and (max-width:480px) {
     grid-template-columns: 1fr;
+    main{
+      max-height: 25vh;
+    }
   }
 }
