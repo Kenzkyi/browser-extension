@@ -1,0 +1,206 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.app{
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 27px;
+}
+
+.app-header{
+  height: 8vh;
+  width: 80%;
+  background-color: hsl(226, 25%, 17%);
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  
+
+  nav{
+    height: 100%;
+    width: 150px;
+    position: relative;
+
+    p{
+      position: absolute;
+      color: white;
+      font-size: 19px;
+      right: 7px;
+      top: 2px;
+    }
+
+    svg{
+      height: 100%;
+      width: 100%;
+      background: url('./assets/images/logo.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      
+      
+    }
+  }
+
+  aside{
+    height: 100%;
+    width: 32px;
+    background-color: hsl(225, 23%, 24%);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img{
+      height: 50%;
+      width: 50%;
+      border-radius: 7%;
+    }
+  }
+}
+
+.app-secondLayer{
+  height: 4.7vh;
+  width: 80%;
+  margin-top: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h5{
+    font-size: 22px;
+    color: white;
+  }
+
+  section{
+    height: 100%;
+    display: flex;
+    gap: 10px;
+
+    button{
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      color: rgb(219, 218, 218);
+      background-color:  hsl(225, 23%, 24%);
+      border: 1px solid rgb(78, 77, 77);
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.app-thirdLayer{
+  min-height: 20vh;
+  width: 80%;
+  display: grid;
+  margin-top: 19px;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+
+  main{
+    height: 30vh;
+    width: 100%;
+    background-color: hsl(226, 25%, 17%);
+    border-radius: 15px;
+    border: 1px solid rgb(78, 77, 77);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    header{
+      height: max-content;
+      width: 100%;
+      display: flex;
+      gap: 7px;
+
+      nav{
+        height: 40px;
+        width: 15%;
+        background-color: green;
+        border-radius: 5px;
+
+        img{
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+
+      article{
+        display: flex;
+        flex-direction: column;
+        width: 83%;
+        gap: 5px;
+        
+        h6{
+          font-size: 16px;
+          color: white;
+        }
+
+        p{
+          font-size: 13px;
+          color: hsl(225, 14%, 67%);
+        }
+      }
+    }
+
+    footer{
+      height: 5vh;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button{
+        height: 100%;
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        color: rgb(219, 218, 218);
+        background-color:  hsl(225, 23%, 24%);
+        border: 1px solid rgb(78, 77, 77);
+        outline: none;
+        cursor: pointer;
+      }
+
+      aside{
+        width: 50px;
+        height: 80%;
+        border-radius: 15px;
+        background-color: hsl(225, 23%, 24%);
+        padding: 2.5px;
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+
+        section{
+          height: 100%;
+          width: 45%;
+          border-radius: 100%;
+          background-color: white;
+        }
+
+        div{
+          width: 55%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
