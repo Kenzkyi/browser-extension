@@ -229,7 +229,7 @@
   @media screen and (max-width:480px) {
     grid-template-columns: 1fr;
     main{
-      max-height: 25vh;
+      max-height: 20dvh;
     }
   }
 }
