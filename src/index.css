@@ -233,7 +233,10 @@
       height: 25dvh;
 
       footer{
-        height: 4dvh;
+        aside{
+          height: 70%;
+          width: 45px;
+        }
       }
     }
   }
