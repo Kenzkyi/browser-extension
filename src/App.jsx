@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import sunIcon from './assets/images/icon-sun.svg'
 import moonIcon from './assets/images/icon-moon.svg'
+import logo from './assets/images/logo.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { setDatas, setfilteredDatas, setMode, setNavState } from './global/slice'
 
@@ -50,8 +51,8 @@ const App = () => {
     <div className='app' style={{background:isDark ? 'linear-gradient(180deg, #040918 0%, #091540 100%)' : 'linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%)'}}>
       <div className="app-header" style={{background:isDark ? 'hsl(226, 25%, 17%)' : 'hsl(200, 60%, 99%)',boxShadow:isDark ? 'none' : 'rgba(149, 157, 165, 0.2) 0px 8px 24px;'}}>
         <nav>
-          <p style={{display:isDark ? 'flex' : 'none' }}>Extensions</p>
-          <svg height={'100%'} width={'100%'} color='blue' />
+          <img src={logo} />
+          <p style={{color:isDark ? 'white' : 'hsl(226, 25%, 17%)'}}>Extensions</p>
         </nav>
         <aside style={{backgroundColor:isDark ? 'hsl(225, 23%, 24%)' : 'hsl(0, 0%, 93%)'}} onClick={()=>dispatch(setMode(!isDark))}>
           {
