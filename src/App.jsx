@@ -4,6 +4,7 @@ import moonIcon from './assets/images/icon-moon.svg'
 import logo from './assets/images/logo.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { setDatas, setfilteredDatas, setMode, setNavState } from './global/slice'
+import data from './data'
 
 const App = () => {
   const datas = useSelector((state)=>state.datas)
@@ -37,6 +38,10 @@ const App = () => {
   const removeItem = (id)=>{
     dispatch(setDatas(datas.filter((item)=>item?.id !== id)))
   }
+
+  useEffect(()=>{
+    dispatch(setDatas(data))
+  },[])
 
   useEffect(()=>{
     dispatch(setfilteredDatas(datas))
