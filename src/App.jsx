@@ -2,53 +2,30 @@ import React, { useEffect } from 'react'
 import sunIcon from './assets/images/icon-sun.svg'
 import moonIcon from './assets/images/icon-moon.svg'
 import logo from './assets/images/logo.svg'
-import { useDispatch, useSelector } from 'react-redux'
-import { setDatas, setfilteredDatas, setMode, setNavState } from './global/slice'
-import data from './data'
+import { useExtensionContext } from './context/BrowserExtensionContext'
 
 const App = () => {
-  const datas = useSelector((state)=>state.datas)
-  const filteredDatas = useSelector((state)=>state.filteredDatas)
-  const navState = useSelector((state)=>state.navState)
-  const isDark = useSelector((state)=>state.isDark)
-  const dispatch = useDispatch()
+  const {
+     onClickAll,
+    onClickActive,
+    onClickInActive,
+    setActiveState,
+    removeItem,
+    setFilteredDatas,
+    setMode,
+    isDark,
+    navState,
+    datas,
+    filteredDatas
+  } = useExtensionContext()
 
-  const onClickAll = ()=>{
-    dispatch(setNavState('all'))
-    dispatch(setfilteredDatas(datas))
-  }
-
-  const onClickActive = ()=>{
-    dispatch(setNavState('active'))
-    dispatch(setfilteredDatas(datas?.filter((item)=>item?.isActive === true)))
-  }
-
-  const onClickInActive = ()=>{
-    dispatch(setNavState('inActive'))
-    dispatch(setfilteredDatas(datas?.filter((item)=>item?.isActive === false)))
-  }
-
-  const setActiveState = (id)=>{
-    const updatedArrayWithState = datas?.map((item)=>item?.id === id ? {...item,isActive: !item?.isActive} : item)
-    dispatch(setDatas(updatedArrayWithState))
-    dispatch(setfilteredDatas(filteredDatas?.map((item)=>item?.id === id ? {...item,isActive: !item?.isActive} : item)))
-    
-  }
-
-  const removeItem = (id)=>{
-    dispatch(setDatas(datas.filter((item)=>item?.id !== id)))
-  }
 
   useEffect(()=>{
-    dispatch(setDatas(data))
-  },[])
-
-  useEffect(()=>{
-    dispatch(setfilteredDatas(datas))
+    setFilteredDatas(datas)
     if (navState === 'active') {
-      dispatch(setfilteredDatas(datas?.filter((item)=>item?.isActive === true)))
+      setFilteredDatas(datas?.filter((item)=>item?.isActive === true))
     }else if (navState === 'inActive'){
-      dispatch(setfilteredDatas(datas?.filter((item)=>item?.isActive === false)))
+      setFilteredDatas(datas?.filter((item)=>item?.isActive === false))
     }
   },[datas])
 
@@ -59,7 +36,7 @@ const App = () => {
           <img src={logo} />
           <p style={{color:isDark ? 'white' : 'hsl(226, 25%, 17%)'}}>Extensions</p>
         </nav>
-        <aside style={{backgroundColor:isDark ? 'hsl(225, 23%, 24%)' : 'hsl(0, 0%, 93%)'}} onClick={()=>dispatch(setMode(!isDark))}>
+        <aside style={{backgroundColor:isDark ? 'hsl(225, 23%, 24%)' : 'hsl(0, 0%, 93%)'}} onClick={()=>setMode(!isDark)}>
           {
             isDark ? <img src={sunIcon} /> : <img src={moonIcon} />
           }
